@@ -17,7 +17,7 @@ export function UserProgressContextProvider({children}) {
   }
 
   function hideCart() {
-    setUserProgress();
+    setUserProgress('');
     // Implementation here
   }
 
