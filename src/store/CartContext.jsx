@@ -33,6 +33,7 @@ function cartReducer(state, action) {
     const existingCartItemIndex = state.items.findIndex(
       (item) => item.id === action.id,
     );
+
     const existingCartItem = state.items[existingCartItemIndex];
 
     const updatedItems = [...state.items];
@@ -45,6 +46,8 @@ function cartReducer(state, action) {
       };
       updatedItems[existingCartItemIndex] = updatedItem;
     }
+
+    return {...state, items: updatedItems};
   }
 
   return state;
