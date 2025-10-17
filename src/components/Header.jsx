@@ -1,7 +1,15 @@
 import Button from './UI/Button.jsx';
 import logoImg from '../assets/logo.jpg';
+import {useContext} from 'react';
+import CartContext from '../store/CartContext.jsx';
 
 export default function Header() {
+  const cartCtx = useContext(CartContext);
+
+  const totalCartItems = cartCtx.items.reduce((curNumber, item) => {
+    return curNumber + item.quantity;
+  }, 0);
+
   return (
     <header id='main-header'>
       <div id='title'>
@@ -9,7 +17,7 @@ export default function Header() {
         <h1>React Food Orders</h1>
       </div>
       <nav>
-        <Button textOnly>Cart (0)</Button>
+        <Button textOnly>Cart ({totalCartItems})</Button>
       </nav>
     </header>
   );
