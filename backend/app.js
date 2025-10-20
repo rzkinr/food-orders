@@ -23,10 +23,14 @@ app.get('/meals', async (req, res) => {
 app.post('/orders', async (req, res) => {
   const orderData = req.body.order;
 
-  if (orderData === null || orderData.items === null || orderData.items.length === 0) {
-    return res
-      .status(400)
-      .json({ message: 'Missing data.' });
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  if (
+    orderData === null ||
+    orderData.items === null ||
+    orderData.items.length === 0
+  ) {
+    return res.status(400).json({message: 'Missing data.'});
   }
 
   if (
@@ -55,7 +59,7 @@ app.post('/orders', async (req, res) => {
   const allOrders = JSON.parse(orders);
   allOrders.push(newOrder);
   await fs.writeFile('./data/orders.json', JSON.stringify(allOrders));
-  res.status(201).json({ message: 'Order created!' });
+  res.status(201).json({message: 'Order created!'});
 });
 
 app.use((req, res) => {
@@ -63,7 +67,7 @@ app.use((req, res) => {
     return res.sendStatus(200);
   }
 
-  res.status(404).json({ message: 'Not found' });
+  res.status(404).json({message: 'Not found'});
 });
 
 app.listen(3000);
