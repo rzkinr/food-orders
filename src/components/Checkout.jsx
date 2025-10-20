@@ -17,14 +17,38 @@ export default function Checkout() {
   function handleClose() {
     userProgressCtx.hideCheckout();
   }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const userData = Object.fromEntries(formData.entries());
+
+    console.log(userData);
+
+    fetch('http://localhost:3000/orders', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        order: {
+          items: cartCtx.items,
+          customer: userData,
+        },
+      }),
+    });
+  }
+
   return (
     <Modal
       open={userProgressCtx.progress === 'checkout'}
       onClose={userProgressCtx.progress === 'checkout' ? handleClose : null}>
-      <form action=''>
+      <form onSubmit={handleSubmit}>
         <h2>Checkout</h2>
         <p>Total amount: {currencyFormatter.format(cartTotal)}</p>
-        <Input label='Full Name' type='text' id='full-name' />
+
+        <Input label='Full Name' type='text' id='name' />
         <Input label='Email' type='email' id='email' />
         <Input label='Street' type='text' id='street' />
         <div className='control-row'>

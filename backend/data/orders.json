@@ -1,1 +1,58 @@
-[]
+[
+  {
+    "items": [
+      {
+        "id": "m2",
+        "name": "Margherita Pizza",
+        "price": "65000",
+        "description": "A classic pizza with fresh mozzarella, tomatoes, and basil on a thin and crispy crust.",
+        "image": "images/margherita-pizza.jpg",
+        "quantity": 1
+      },
+      {
+        "id": "m1",
+        "name": "Mac & Cheese",
+        "price": "45000",
+        "description": "Creamy cheddar cheese mixed with perfectly cooked macaroni, topped with crispy breadcrumbs. A classic comfort food.",
+        "image": "images/mac-and-cheese.jpg",
+        "quantity": 2
+      }
+    ],
+    "customer": {
+      "name": "asasas",
+      "email": "asasas@ccc.ccc",
+      "street": "asas",
+      "postal-code": "1234",
+      "city": "kota"
+    },
+    "id": "256.1834777791625"
+  },
+  {
+    "items": [
+      {
+        "id": "m2",
+        "name": "Margherita Pizza",
+        "price": "65000",
+        "description": "A classic pizza with fresh mozzarella, tomatoes, and basil on a thin and crispy crust.",
+        "image": "images/margherita-pizza.jpg",
+        "quantity": 1
+      },
+      {
+        "id": "m1",
+        "name": "Mac & Cheese",
+        "price": "45000",
+        "description": "Creamy cheddar cheese mixed with perfectly cooked macaroni, topped with crispy breadcrumbs. A classic comfort food.",
+        "image": "images/mac-and-cheese.jpg",
+        "quantity": 2
+      }
+    ],
+    "customer": {
+      "name": "asasas",
+      "email": "asasas@ccc.ccc",
+      "street": "asas",
+      "postal-code": "1234",
+      "city": "kota"
+    },
+    "id": "489.7218719659513"
+  }
+]
